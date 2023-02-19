@@ -3,7 +3,7 @@ import {createRoot} from 'react-dom/client';
 
 async function addSticky() {
   const stickyNote = await miro.board.createStickyNote({
-    content: 'Hello, World!',
+    content: 'Hello, Mom!',
   });
 
   await miro.board.viewport.zoomTo(stickyNote);
@@ -11,6 +11,7 @@ async function addSticky() {
 
 const App: React.FC = () => {
   React.useEffect(() => {
+    addSticky();
     addSticky();
   }, []);
 
@@ -22,7 +23,7 @@ const App: React.FC = () => {
       <div className="cs1 ce12">
         <h1>Congratulations!</h1>
         <p>You've just created your first Miro app!</p>
-        <p>
+        <p>Z
           To explore more and build your own app, see the Miro Developer
           Platform documentation.
         </p>
@@ -40,6 +41,6 @@ const App: React.FC = () => {
   );
 };
 
-const container = document.getElementById('root');
+const container = document.getElementById('root')!;
 const root = createRoot(container);
 root.render(<App />);
